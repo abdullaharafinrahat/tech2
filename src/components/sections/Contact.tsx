@@ -19,41 +19,18 @@ export function Contact() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    const BOT_TOKEN = '8787613305:AAFYwFGhTJPfIpn5Y-7vZW3-y99qykPaIy0';
-    // IMPORTANT: You need to replace this with your actual Chat ID where you want to receive messages.
-    // E.g. CHAT_ID = '123456789' or '-1001234567890' for groups.
-    const CHAT_ID = '7120221800';
-
-    const text = `
-📩 *New Contact Inquiry*
-
-*Name:* ${formData.name}
-*Email:* ${formData.email}
-*Phone:* ${formData.phone}
-*Project Type:* ${formData.projectType}
-*Budget:* ${formData.budget}
-*Message:* ${formData.message || 'No message provided'}
-`;
-
     try {
-      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          chat_id: CHAT_ID,
-          text: text,
-          parse_mode: 'Markdown'
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', phone: '', projectType: '', budget: '', message: '' });
       } else {
-        const err = await response.json();
-        console.error('Telegram API Error:', err);
+        console.error('Failed to send message');
         setSubmitStatus('error');
       }
     } catch (error) {
