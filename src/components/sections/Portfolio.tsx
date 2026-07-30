@@ -3,11 +3,11 @@ import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: "Doctor Portfolio",
-    description: "A professional portfolio and appointment booking system for medical professionals.",
-    tags: ["React", "Booking", "UI/UX"],
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop",
-    link: "https://doctorportfolio1.netlify.app/"
+    title: "SatataFashion.com",
+    description: "A modern e-commerce fashion website with product showcases and online shopping capabilities.",
+    tags: ["React", "E-commerce", "Fashion"],
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
+    link: "https://satatafashion.com/"
   },
   {
     title: "Aurelia Restaurant",
