@@ -38,7 +38,7 @@ export function Navbar() {
           <img 
             src="https://res.cloudinary.com/drufv7gh5/image/upload/v1785441323/favicon_oinq17.png" 
             alt="NexTechZen Logo"
-            className="w-[80px] sm:w-[100px] h-auto object-contain"
+            className="w-[80px] sm:w-[100px] h-[80px] sm:h-[100px] object-contain"
           />
           <span className={`font-heading font-bold text-lg tracking-wide hidden sm:block text-gray-900 -ml-5 sm:-ml-6`}>
             NexTech<span className="text-gray-900">Zen</span>
